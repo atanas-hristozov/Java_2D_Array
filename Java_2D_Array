@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String line = scanner.nextLine();
+        int rows = Integer.parseInt(line);
+        int[][] matrix = new int[rows][];
+        for (int row = 0; row< rows; row++) {
+            line = scanner.nextLine();
+            String[] elements = line.split(" ");
+            matrix[row] = new int[elements.length];
+            for (int col = 0; col < elements.length; col++) {
+                matrix[row][col] = Integer.parseInt(elements[col]);
+            }
+        }
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col< matrix[0].length; col++) {
+                System.out.printf("%d ", matrix[row][col]);
+            }
+            System.out.println();
+        }
+    }
+}
